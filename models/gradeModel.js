@@ -1,6 +1,6 @@
-const db = require('../config/db-connection');
-
-const gradeSchema = new db.Schema({
+// const db = require('../config/db-connection');
+const { Schema,model } = require('../config/db-connection');
+const gradeSchema = new Schema({
   math: {
    type: Number,
     required: true
@@ -20,6 +20,7 @@ const gradeSchema = new db.Schema({
   
 });
 
-const grade = db.model('grade', gradeSchema);
+// const grade = db.model('grade', gradeSchema);
+module.exports=model('gradeModel',gradeSchema);
 
-module.exports = grade;
+// module.exports = grade;

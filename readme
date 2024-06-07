@@ -5,3 +5,93 @@ used controller folder for doing validations
 used model folder for data definition
 did all post requests and get requests in controllers 
 connected to user router and post router using by defining end points server.js file
+end point for students
+/student
+end point for grades
+/grades
+end point for teacherscomments
+//teachercomments
+...............................
+grades  [
+  {
+    math: 100,
+    science: 95,
+    english: 90,
+    _id: new ObjectId('66638c745d3fd418efd84036'),
+    __v: 0
+  },
+  {
+    math: 60,
+    science: 78,
+    english: 75,
+    _id: new ObjectId('66638c745d3fd418efd84037'),
+    __v: 0
+  },
+  {
+    math: 89,
+    science: 76,
+    english: 98,
+    _id: new ObjectId('66638c745d3fd418efd84038'),
+    __v: 0
+  },
+  {
+    math: 88,
+    science: 73,
+    english: 92,
+    _id: new ObjectId('66638c745d3fd418efd84039'),
+    __v: 0
+  }
+]
+.......................................................................................
+Students:  [
+  {
+    studentName: 'student1',
+    email: 'student1234@gmail.com',
+    password: '1234567',
+    _id: new ObjectId('66638c755d3fd418efd8403e'),
+    __v: 0
+  },
+  {
+    studentName: 'student2',
+    email: 'student34@gmail.com',
+    password: '23456',
+    _id: new ObjectId('66638c755d3fd418efd8403f'),
+    __v: 0
+  },
+  {
+    studentName: 'student3',
+    email: 'student5@gmail.com',
+    password: '29876',
+    _id: new ObjectId('66638c755d3fd418efd84040'),
+    __v: 0
+  },
+  {
+    studentName: 'student4',
+    email: 'student45@gmail.com',
+    password: '87907',
+    _id: new ObjectId('66638c755d3fd418efd84041'),
+    __v: 0
+  }
+]
+.............................................................................................................
+comments:  [
+  {
+    comment: 'awesome Job',
+    _id: new ObjectId('66638fdef86c1ec998f016a6'),
+    __v: 0
+  },
+  {
+    comment: 'Needs Improvement',
+    _id: new ObjectId('66638fdef86c1ec998f016a7'),
+    __v: 0
+  },
+  {
+    comment: 'Good Job',
+    _id: new ObjectId('66638fdef86c1ec998f016a8'),
+    __v: 0
+  },
+  {
+    comment: 'almost there good Job',
+    _id: new ObjectId('66638fdef86c1ec998f016a9'),
+    __v: 0
+  }

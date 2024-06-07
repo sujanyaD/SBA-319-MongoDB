@@ -1,62 +1,96 @@
 // Require connection file to connect
-const mongoose = require('./db-connection.js');
+const mongoose = require('../config/db-connection.js');
 // Require Models for delete and create operations
-const grade = require('../models/gradeModel.js');
-const Student = require('../models/studentModel.js');
-// const teachercommentRouter= require('../models/teacherCommentsModel.js')
+const Grades = require('../models/gradeModel.js');
+const Students = require('../models/studentModel.js');
+ const Teachercomment= require('../models/teacherCommentsModel.js')
 
 
-const Students = [
+ const students = [
   {
-    username: "student1",
+    studentName: "student1",
     email: "student1234@gmail.com",
     password: "1234567",
    
   },
   {
-    username:"student2",
+    studentName:"student2",
     email:"student34@gmail.com",
     password:"23456",
    
     },
     {
-    username:"student3",
+      studentName:"student3",
     email:"student5@gmail.com",
     password:"29876",
     
     },
     {
-    username:"student4",
+      studentName:"student4",
     email:"student45@gmail.com",
     password:"87907",
     
     }
 ];
-
-const studentGrade = [
+const grades = [
   {
-    Math:"100",
-    Science:"95",
-    English:"90"
+    math:"100",
+    science:"95",
+    english:"90"
+  },
+  {
+   math:"60",
+    science:"78",
+    english:"75"
+  },
+  {
+    math:"89",
+    science:"76",
+    english:"98"
+  },
+  {
+    math:"88",
+    science:"73",
+    english:"92"
   }
-    
 
+    
 ];
+const comments=[
+   {
+    comment:"awesome Job"
+   },
+   {
+    comment:"Needs Improvement"
+   },
+   {
+    comment:"Good Job"
+   },
+   {
+    comment:"almost there good Job"
+   }
+   
+  
+]
 
 async function seed() {
   try {
     //Delete pre-existing data new data with no repeated data
-    await Student.deleteMany({});
-    await grade.deleteMany({});
+    await Students.deleteMany({});
+    await Grades.deleteMany({});
+    await Teachercomment.deleteMany({});
 
-    const createdGrades = await grade.create(grade);
+    const createdGrades = await Grades.create(grades);
 
-    console.log('grade: ', createdGrades);
+    console.log('grades ', createdGrades);
 
-    const createdStudents = await Student.create(Students);
+    const createdStudents = await Students.create(students);
 
     console.log('Students: ', createdStudents);
 
+    const createComments = await Teachercomment.create(comments);
+
+    console.log('comments: ', createComments);
     await mongoose.connection.close();
   } catch (err) {
     console.log(err);

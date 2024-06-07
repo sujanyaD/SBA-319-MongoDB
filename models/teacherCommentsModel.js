@@ -1,18 +1,18 @@
 // models/comment.js
-const db = require('../config/db-connection');
+// const db = require('../config/db-connection');
+const { Schema,model } = require('../config/db-connection');
 
-const commentSchema = new db.Schema({
+
+const commentSchema = new Schema({
  comment: {
     type: String,
-    
-  },
-  post: {
-    type: db.Schema.Types.ObjectId,
-   
-  },
+   required: true,
+  }
+  
   // other comment fields
 });
 
-const Comment = db.model('Comment', commentSchema);
+// const Comment = db.model('Comment', commentSchema);
+module.exports=model('teacherCommentsModel',commentSchema);
 
-module.exports = Comment;
+// module.exports = Comment;

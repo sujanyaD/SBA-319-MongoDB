@@ -42,8 +42,8 @@ const createGrade = async (req, res) => {
 // PATCH/PUT update a post
 const updateGrade = async (req, res) => {
   try {
-    const post = await Post.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    res.json(post);
+    const grade = await grade.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.json(grade);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }

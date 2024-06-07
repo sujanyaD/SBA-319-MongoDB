@@ -1,5 +1,5 @@
 const { Schema,model } = require('../config/db-connection');
-// const db = require('../config/db-connection');
+//  const db = require('../config/db-connection');
 //const modeldb = require('mongoose');
 
 const studentSchema = new Schema({
