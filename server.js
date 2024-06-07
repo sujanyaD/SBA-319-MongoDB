@@ -26,10 +26,6 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something went wrong.');
 });
 // Create MongoDB indexes for efficient queries
-itemSchema.index({ name: 1 }); // Indexing on 'name' field
-
-const Item = mongoose.model('Item', itemSchema);
-
 
 // Calling the listen function telling the server to listen on port 3000
 app.listen(PORT, () => {
