@@ -1,0 +1,7 @@
+made 3 folder structures controllers ,models and routes
+used model folder for all my definitions
+used routes folder for requests
+used controller folder for doing validations
+used model folder for data definition
+did all post requests and get requests in controllers 
+connected to user router and post router using by defining end points server.js file

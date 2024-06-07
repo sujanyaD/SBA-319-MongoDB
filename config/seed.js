@@ -5,53 +5,57 @@ const Post = require('../models/postModel.js');
 const User = require('../models/UserModel.js');
 const Comments= require('../models/commentsModel.js')
 
-///////////////////////////
-//CHANGE THIS SAMPLE DATA TO THE DATA YOU'RE WORKING WITH!!!
-///////////////////////////
+
 const users = [
   {
-    email: 'john@doe.com',
-    password: '123456',
-    age: 40,
-    isCool: true,
+    username: "student1",
+    email: "student1234@gmail.com",
+    password: "1234567",
+    age: 23,
   },
   {
-    email: 'boba@fett.com',
-    password: 'jetpackdude',
-    age: 35,
-    isCool: true,
-  },
-  {
-    email: 'darth@vader.com',
-    password: 'iamyourfather',
-    age: 60,
-    isCool: false,
-  },
+    username:"student2",
+    email:"student34@gmail.com",
+    password:"23456",
+    age:21
+    },
+    {
+    username:"student3",
+    email:"student5@gmail.com",
+    password:"29876",
+    age:21
+    },
+    {
+    username:"student4",
+    email:"student45@gmail.com",
+    password:"8790",
+    age:21
+    }
 ];
 
 const posts = [
   {
-    title: 'Star Wars',
-    content: 'its really cool',
+    title: "Star Wars",
+    content: "its really cool",
     author: 'Josh',
   },
   {
-    title: 'MongoDB',
-    content: 'its a database',
-    author: 'Per Scholas',
+    title: "MongoDB",
+    content: "its a database",
+    author: "Per Scholas",
   },
   {
-    title: 'Dogs are Cool',
-    content: 'Do i really need to explain??',
-    author: 'Doglover123',
+    title: "Dogs are Cool",
+    content: "Do i really need to explain??",
+    author: "Doglover123",
     comments: [
       {
-        content: 'you so right',
-        author: 'dogsdogsdogs',
+        content: "you so right",
+        author: "dogsdogsdogs",
       },
       {
-        content: 'true true',
-        author: 'albert',
+        content: "true true",
+        author: "albert",
       },
     ],
   },
@@ -59,6 +63,7 @@ const posts = [
 
 async function seed() {
   try {
+    //Delete pre-existing data new data with no repeated data
     await Post.deleteMany({});
     await User.deleteMany({});
 
