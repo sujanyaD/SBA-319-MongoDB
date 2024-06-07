@@ -1,5 +1,5 @@
 // controllers/postController.js
-const Post = require('../models/post');
+const Post = require('../models/postModel');
 
 // GET all posts
 const getAllPosts = async (req, res) => {

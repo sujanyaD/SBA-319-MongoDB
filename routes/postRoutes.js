@@ -1,8 +1,8 @@
 // routes/postRoutes.js
 const express = require('express');
-const router = express.Router();
-const postController = require('../controllers/postController');
 
+const postController = require('../controllers/postsController');
+const router = express.Router();
 // GET all posts
 router.get('/', postController.getAllPosts);
 
