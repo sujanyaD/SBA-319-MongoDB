@@ -1,46 +1,46 @@
 // controllers/postController.js
-const Post = require('../models/postModel');
+const grade = require('../models/gradeModel');
 
 // GET all posts
-const getAllPosts = async (req, res) => {
+const getAllGrades = async (req, res) => {
   try {
-    const posts = await Post.find();
-    res.json(posts);
+    const grade = await grade.find();
+    res.json(grade);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
 
 // GET a single post by ID
-const getPostById = async (req, res) => {
+const getGradeById = async (req, res) => {
   try {
-    const post = await Post.findById(req.params.id);
-    if (!post) {
-      return res.status(404).json({ message: 'Post not found' });
+    const grade = await grade.findById(req.params.id);
+    if (!grade) {
+      return res.status(404).json({ message: 'grade not found' });
     }
-    res.json(post);
+    res.json(grade);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
 
 // POST a new post
-const createPost = async (req, res) => {
-  const post = new Post({
+const createGrade = async (req, res) => {
+  const grade = new Post({
     title: req.body.title,
     content: req.body.content,
     author: req.body.author,
   });
   try {
-    const newPost = await post.save();
-    res.status(201).json(newPost);
+    const newGrade = await grade.save();
+    res.status(201).json(newGrade);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
 };
 
 // PATCH/PUT update a post
-const updatePost = async (req, res) => {
+const updateGrade = async (req, res) => {
   try {
     const post = await Post.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.json(post);
@@ -50,13 +50,13 @@ const updatePost = async (req, res) => {
 };
 
 // DELETE a post
-const deletePost = async (req, res) => {
+const deleteGrade = async (req, res) => {
   try {
-    await Post.findByIdAndDelete(req.params.id);
-    res.json({ message: 'Post deleted' });
+    await grade.findByIdAndDelete(req.params.id);
+    res.json({ message: 'grade deleted' });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
 
-module.exports = { getAllPosts, getPostById, createPost, updatePost, deletePost };
+module.exports = {  getAllGrades,getGradeById, createGrade, updateGrade, deleteGrade };

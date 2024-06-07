@@ -1,6 +1,6 @@
 // routes/commentRoutes.js
 const express = require('express');
-const commentController = require('../controllers/commentsController');
+const commentController = require('../controllers/teacherCommentsController');
 const router = express.Router();
 
 // GET all comments
